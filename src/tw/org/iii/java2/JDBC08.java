@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-/*	20180826PM1 ¬d¸ß¥yªk
+/*	20180826PM1 
  * 	
  * 
  */
@@ -17,27 +17,34 @@ public class JDBC08 {
 	public static void main(String[] args) {
 		String url = "jdbc:mysql://localhost:3306/iii"; 
 		
-		//	³z¹Lproperties¸ê®Æµ²ºc¨Ó¦s©ñÄÝ©Ê¸ê®Æ => ¼u©Ê¤ñ¤@¤GºØ§ó¤j
+		//	é€éŽpropertiesè³‡æ–™çµæ§‹ä¾†å­˜æ”¾å±¬æ€§è³‡æ–™ => å½ˆæ€§æ¯”ä¸€äºŒç¨®æ›´å¤§
 		Properties prop = new Properties();
 		prop.setProperty("user", "root");
 		prop.setProperty("password", "root");
 		
 		
 		// SQL Command
-		// String del = "delete from cust where id = 3";
-		// String del = "delete from cust where name = 'Ben'";
-		String query = "select * from cust";
+		// String query = "select name, id, tel, birthday from cust";
+		String query = "select name as FNAME, id, tel, birthday from cust";
 		
 		try (Connection conn = DriverManager.getConnection(url, prop);) {
 			Statement stmt = conn.createStatement();
 			
-			ResultSet rs = stmt.executeQuery(query);	// ³o­Ó¬O¬d¸ß»yªk ¤£¥i¥Îinsert
+			ResultSet rs = stmt.executeQuery(query);	// for query only not for update
 			
 			while (rs.next()) {
-				String f1 = rs.getString(1);
-				String f2 = rs.getString(2);
-				String f3 = rs.getString(3);
-				String f4 = rs.getString(4);
+				// colum index
+//				String f1 = rs.getString(1);
+//				String f2 = rs.getString(2);
+//				String f3 = rs.getString(3);
+//				String f4 = rs.getString(4);
+				
+				// colum label ()
+				String f1 = rs.getString("id"); // Label depends on your result given by sql command
+				String f2 = rs.getString("FNAME");
+				String f3 = rs.getString("tel");
+				String f4 = rs.getString("birthday");
+				
 				System.out.println(f1 + ":" + f2 + ":" + f3 + ":" + f4);
 			}
 			
