@@ -17,7 +17,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/*	20180826PM2 JTable Tryout
+/*	20180826PM2 JTable 試玩
  * 	
  * 	Use Table to show the data from DB to user	
  * 
@@ -25,6 +25,7 @@ import javax.swing.table.DefaultTableModel;
  * 
  * 	Reference: 
  * 	https://docs.oracle.com/javase/tutorial/uiswing/components/table.html
+ * 	=> 使用 JAVA Web Start : 程式在遠端執行, 再呈現在使用者端 (目前很少人使用)
  * 
  * 	Abstract Table
  * 	https://docs.oracle.com/javase/7/docs/api/javax/swing/table/AbstractTableModel.html

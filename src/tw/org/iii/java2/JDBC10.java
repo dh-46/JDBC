@@ -18,7 +18,6 @@ public class JDBC10 {
 	public static void main(String[] args) {
 		String url = "jdbc:mysql://localhost:3306/iii"; 
 		
-		//	³z¹Lproperties¸ê®Æµ²ºc¨Ó¦s©ñÄİ©Ê¸ê®Æ => ¼u©Ê¤ñ¤@¤GºØ§ó¤j
 		Properties prop = new Properties();
 		prop.setProperty("user", "root");
 		prop.setProperty("password", "root");
@@ -34,7 +33,7 @@ public class JDBC10 {
 			
 			
 			int result = pstmt.executeUpdate();
-			//	¦^¶Ç¦^¨Óªº­È¥Nªí¤°»ò·N«ä? ¾Ş§@¨ìªº¸ê®Æµ§¼Æ
+			//	å›å‚³çš„å€¼ = æ“ä½œåˆ°çš„è³‡æ–™ç­†æ•¸
 			
 			System.out.println("OK" + result);
 		} catch (SQLException e) {
