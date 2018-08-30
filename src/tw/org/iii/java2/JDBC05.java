@@ -6,16 +6,24 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-/*	20180826PM1 getConnection V4 ³s½u¤è¦¡ (¦Û°ÊÃö³¬)
+/*	20180826PM1 getConnection V4 00:52:28
+ * 	
+ * 	ç¬¬ä¸‰æ‹›å†åŠ ä¸Šè‡ªå‹•é—œé–‰
+ * 
+ * 	å»ºç«‹é€£ç·š (é€éå­—ä¸²) ç¬¬ä¸‰æ‹›  [æ¨è–¦!!]
  * 	getConnection(String url, Properties info)
  * 		=> properties 
- * 			https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-configuration-properties.html
- * 		=> ¼u©Ê§ó¤j, ¦Û­qÄİ©Ê³]©w
+ * 			=> https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-configuration-properties.html
+ * 			=> çœ‹ä¸€ä¸‹ Properties and Descriptions (å¯è¨­å®šçš„key)
+ * 		=> å½ˆæ€§æ›´å¤§, è‡ªè¨‚å±¬æ€§è¨­å®š
  * 	Properties
- * 		Map¬[ºc
- * 		
- * 	¦³¨Ç¦øªA¾¹·|«O«ù«ùÄò©Êªº³s±µ, ©Ò¥H­n§ì¨ì¦øªA¾¹ªº¯S©Ê.
- * 
+ * 	=> https://docs.oracle.com/javase/7/docs/api/java/util/Properties.html
+ * 	=> å¯¦ä½œMapä»‹é¢ (key, value)
+ * 	=> éƒ½æ˜¯å­—ä¸²
+ * 	=> setProperty : è¨­å®š
+ * 	=> getProperty : å–å€¼
+ * 	
+ * 	æ³¨æ„importçš„package => java.sql.Connection
  */
 
 public class JDBC05 {
@@ -23,7 +31,6 @@ public class JDBC05 {
 	public static void main(String[] args) {
 		String url = "jdbc:mysql://localhost:3306/iii"; 
 		
-		//	³z¹Lproperties¸ê®Æµ²ºc¨Ó¦s©ñÄİ©Ê¸ê®Æ => ¼u©Ê¤ñ¤@¤GºØ§ó¤j
 		Properties prop = new Properties();
 		prop.setProperty("user", "root");
 		prop.setProperty("password", "root");
@@ -34,11 +41,10 @@ public class JDBC05 {
 						"values ('Martin', '226366', '1987-12-18')";
 		
 		try (Connection conn = DriverManager.getConnection(url, prop);) {
-			//	¬°¬Æ»ò¥i¥H¨Ï¥Îautoclose => ¦]Connection¦³¹ê§@autoclosebale¤¶­±
+			//	ç‚ºç”šéº¼å¯ä»¥ä½¿ç”¨autoclose => å› Connectionæœ‰å¯¦ä½œautoclosebaleä»‹é¢
 			Statement stmt = conn.createStatement();
 			
-			//	stmt.executeQuery(insert);	// ³o­Ó¬O¬d¸ß»yªk ¤£¥i¥Îinsert
-			stmt.execute(insert);	// ³o­Ó¤~¬O°õ¦æ
+			stmt.execute(insert);
 			
 			System.out.println("OK");
 		} catch (SQLException e) {

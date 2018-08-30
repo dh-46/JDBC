@@ -2,33 +2,40 @@ package tw.org.iii.java2;
 
 import java.lang.reflect.Method;
 
-/*	20180826AM2 JDBC
+/*	20180826AM2 JDBC åŸºæœ¬è¨­å®š
  * 
  */
 
 public class JDBC01 {
 
 	public static void main(String[] args) {
-		// «ü©w¸ü¤J¯S©wªºÃş§O¦WºÙ () [¬°¤F¸ü¤JÅX°Êµ{¦¡]
+		// æŒ‡å®šè¼‰å…¥ç‰¹å®šçš„é¡åˆ¥åç¨± () [ç‚ºäº†è¼‰å…¥é©…å‹•ç¨‹å¼]
 		//Class.forName(arg0);
 		
+		// Classé¡åˆ¥ç‰©ä»¶æ–¹æ³•ä»‹ç´¹
 //		String str1 = new String();
 //		String str2 = "";
 //		Class class1 = str1.getClass();
 //		System.out.println(class1.getName());
 //		
-//		Class class2 = class1.getSuperclass(); // ¨ú±o¤÷Ãş§O
+//		Class class2 = class1.getSuperclass(); // å–å¾—çˆ¶é¡åˆ¥
 //		System.out.println(class2.getName());
 //		
-//		//class1.getModifiers(); // ¨ú±o­×¹¢¦r
+//		//class1.getModifiers(); // å–å¾—ä¿®é£¾å­—æ–¹æ³•
+//		
+//		// .getDeclaredMethods()
 //		Method[] methods = class1.getDeclaredMethods();
 //		for (Method method : methods) {
 //			System.out.println(method.getName());
 //		}
 		
+		
+		// è¼‰å…¥JDBC Driver
+		// https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-usagenotes-connect-drivermanager.html
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("OK"); // reference³]©w§¹«á, Åã¥ÜOK¥Nªí±M®×¤w¸g¦Û°Ê¸ü¤JDriver
+			System.out.println("OK"); 
+			// referenceè¨­å®šå®Œå¾Œ, é¡¯ç¤ºOKä»£è¡¨å°ˆæ¡ˆå·²ç¶“è‡ªå‹•è¼‰å…¥Driver
 		} catch (ClassNotFoundException e) {
 			System.out.println("Driver Not Found");
 		}

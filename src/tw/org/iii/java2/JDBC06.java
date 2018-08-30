@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-/*	20180826PM1 §R°£¥yªk
+/*	20180826PM1 SQL Command åˆªé™¤èªžæ³• 00:56:00
  * 	
  * 
  */
@@ -16,7 +16,6 @@ public class JDBC06 {
 	public static void main(String[] args) {
 		String url = "jdbc:mysql://localhost:3306/iii"; 
 		
-		//	³z¹Lproperties¸ê®Æµ²ºc¨Ó¦s©ñÄÝ©Ê¸ê®Æ => ¼u©Ê¤ñ¤@¤GºØ§ó¤j
 		Properties prop = new Properties();
 		prop.setProperty("user", "root");
 		prop.setProperty("password", "root");
@@ -30,8 +29,7 @@ public class JDBC06 {
 		try (Connection conn = DriverManager.getConnection(url, prop);) {
 			Statement stmt = conn.createStatement();
 			
-			//	stmt.executeQuery(insert);	// ³o­Ó¬O¬d¸ß»yªk ¤£¥i¥Îinsert
-			stmt.execute(del);	// ³o­Ó¤~¬O°õ¦æ
+			stmt.execute(del);	
 			
 			System.out.println("OK");
 		} catch (SQLException e) {

@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/*	20180826PM1 
+/*	20180826PM1 å»ºç«‹é€£ç·š
  * 	
- * 	¦³¨Ç¦øªA¾¹·|«O«ù«ùÄò©Êªº³s±µ, ©Ò¥H­n§ì¨ì¦øªA¾¹ªº¯S©Ê.
+ * 	æœ‰äº›ä¼ºæœå™¨æœƒä¿æŒæŒçºŒæ€§çš„é€£æ¥, æ‰€ä»¥è¦æŠ“åˆ°ä¼ºæœå™¨çš„ç‰¹æ€§.
  * 
  */
 
@@ -15,8 +15,8 @@ public class JDBC02 {
 
 	public static void main(String[] args) {
 		String url = "jdbc:mysql://localhost:3306/iii?user=root&password=root"; 
-		// ¹w³]port ¥i¬Ù²¤ (:3306) / iii (¸ê®Æ®w¦W)
-		// port¸¹­nª`·N¬O§_¥¿½T
+		// é è¨­port å¯çœç•¥ (:3306) / iii (è³‡æ–™åº«å)
+		// portè™Ÿè¦æ³¨æ„æ˜¯å¦æ­£ç¢º
 		// https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-url-format.html
 		
 		// SQL Command
@@ -24,12 +24,12 @@ public class JDBC02 {
 						"values ('John', '123456', '1999-10-10')";
 		
 		try {
-			// «Ø¥ß³s½u (³z¹L¦r¦ê) ²Ä¤@©Û
+			// å»ºç«‹é€£ç·š (é€éå­—ä¸²) ç¬¬ä¸€æ‹›
 			Connection conn = DriverManager.getConnection(url);
 			Statement stmt = conn.createStatement();
 			
-			//	stmt.executeQuery(insert);	// ³o­Ó¬O¬d¸ß»yªk ¤£¥i¥Îinsert
-			stmt.execute(insert);	// ³o­Ó¤~¬O°õ¦æ
+			//	stmt.executeQuery(insert);	// é€™å€‹æ˜¯æŸ¥è©¢èªæ³• ä¸å¯ç”¨insert
+			stmt.execute(insert);	// é€™å€‹æ‰æ˜¯åŸ·è¡Œ
 			
 			
 			conn.close();

@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 /*	20180826PM1 getConnection V2
  * 	
- * 	有些伺服器會保持持續性的連接, 所以要抓到伺服器的特性.
+ * 	
  * 
  */
 
@@ -23,12 +23,12 @@ public class JDBC03 {
 						"values ('Tom', '123456', '2000-12-25')";
 		
 		try {
-			// 建立連線 (透過字串) 第二招  getConnection(String url, String user, String password)
+			// 嚙諍立連嚙線 (嚙緲嚙盤嚙緝嚙踝蕭) 嚙衝二嚙踝蕭  getConnection(String url, String user, String password)
 			Connection conn = DriverManager.getConnection(url, user, passwd);
 			Statement stmt = conn.createStatement();
 			
-			//	stmt.executeQuery(insert);	// 這個是查詢語法 不可用insert
-			stmt.execute(insert);	// 這個才是執行
+			//	stmt.executeQuery(insert);	// 嚙緻嚙諉是嚙範嚙賠語嚙糊 嚙踝蕭嚙箠嚙踝蕭insert
+			stmt.execute(insert);	// 嚙緻嚙諉才嚙瞌嚙踝蕭嚙踝蕭
 			
 			
 			conn.close();
