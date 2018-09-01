@@ -11,6 +11,8 @@ import java.util.Properties;
 
 /*	20180901PM2
  * 	
+ * 	存取資料庫上的Object&Image
+ * 	=> BLOB&LONGBLOB格式
  * 
  */
 
