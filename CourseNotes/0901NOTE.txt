@@ -1,4 +1,5 @@
-20180901AM NOTE
+20180901 NOTE
+AM1
 1. 連接遠端OpenData, 將資料抓到本地資料庫.
 	資料格式	=>
 		CSV: 資料以列為單位
@@ -10,4 +11,11 @@
 	補充: 資料庫格式 TEXT 容量65536
 	
 	
-	
+PM1
+建立JTable表格
+
+BLOB
+LONGBLOB
+
+追加: accessDB JDBC (keyword: java8 accdb jdbc) [本機端存取]
+	ucanaccess.jar

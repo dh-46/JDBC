@@ -9,13 +9,13 @@ import java.util.Properties;
 
 /*	20180901AM2
  * 	
- * 	帳號密碼登入
+ * 	帳號密碼登入_用程式端驗證帳號是否重複
  */
 
 public class JDBC16 {
 
 	public static void main(String[] args) {
-		String account = "tom" , password = "222222", realname="Tom Cruise";
+		String account = "john" , password = "2333333", realname="John Cruise";
 		
 		// Connect to DB
 		Properties info = new Properties();
