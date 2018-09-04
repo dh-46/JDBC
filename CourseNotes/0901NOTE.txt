@@ -2,14 +2,18 @@
 AM1
 1. 連接遠端OpenData, 將資料抓到本地資料庫.
 	資料格式	=>
-		CSV: 資料以列為單位
-		XML: 較浪費空間, 有HTML標籤, 階層
-		JSON: 也是階層; 但無起始與結尾標籤; 較不浪費空間
+		CSV: 資料以列為單位,一筆一筆. (如果是某資料下又有子項目,那就不太適合用CSV)
+		XML: 比JSON來說較浪費空間, 有HTML標籤/屬性, 階層架構
+		JSON: 也是階層架構; 但無起始與結尾標籤; 較不浪費空間  => GSON (GOOGLE也是類似)
 		Excel&Word: 平台限制
 		<依資料內容與使用方式選擇適合的格式>
 	
 	補充: 資料庫格式 TEXT 容量65536
-	
+2.	分析農委會的資料 http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAgriculturalProduce.aspx
+	=> 一筆一筆的資料(陣列)
+	=> 每一筆內都有其欄位與其值
+	=> 就資料架構上比較適合用CSV
+	=> 資料格式太整齊 正常來說一般的JSON資料只會有一列, 並不會有換列排版.
 	
 PM1
 建立JTable表格
